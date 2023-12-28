@@ -8,7 +8,6 @@ const Aws = require("aws-sdk");
 
 app.use(fileUpload());
 
-console.log("=======>", process.env.DATABASE);
 
 mongoose
   .connect(process.env.DATABASE, {
@@ -60,6 +59,6 @@ app.post("/upload", async (req, res) => {
     });
 });
 
-app.listen(5000, () => {
+app.listen(process.env.port, () => {
   console.log("server is start");
 });
